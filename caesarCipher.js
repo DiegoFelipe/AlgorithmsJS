@@ -1,4 +1,5 @@
-var validCharacters = 'abcdefghijklmnopqrstuvwxyz'.split('')
+var validCharacters = 'abcdefghijklmnopqrstuvwyxz'.split('')
+var validCharsLength = validCharacters.length
 
 const removeInvalidCharacters = (str, validCharacters) => {
     resultArray = []
@@ -25,6 +26,7 @@ const getCipheredChar = position => validCharacters[position]
 
 const caesarCipher = (str, num) => {
 
+    num = num % validCharsLength
     str = str.split('')
     /* 3 steps:
     1 - Remove invalid characters
