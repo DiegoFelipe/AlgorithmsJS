@@ -3,7 +3,7 @@ const getMean = (arr) => (arr.reduce(sumArray)) / arr.length
 
 
 const getMiddleIndexOfArray = arr =>  {
-    if(arr.length % 2 !== 0) // od
+    if(arr.length % 2 !== 0) // odd
         return Math.floor((arr.length / 2))
     else {
         let mid1 = (arr.length/2)-1
@@ -29,13 +29,25 @@ const createHashTable = arrayToMap => {
 }
 
 const getMaxFrequency = arr => {
+    var maxFrequency = 0
+      var mode = []
+      for (var num in arr) {
+        if (arr[num] > maxFrequency) {
+          mode = [ num ]
+          maxFrequency = arr[num]
+        }
+        else if (arr[num] === maxFrequency) mode.push(num)
+      }
 
+      if (mode.length === Object.keys(arr).length) mode = []
+      return mode
 }
 
 const getMode = (arr) => {
 
     let hashTable = createHashTable(arr)
-    console.log(getMaxFrequency(hashTable))
+    return getMaxFrequency(hashTable)
+
 
 }
 
