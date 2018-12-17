@@ -18,7 +18,7 @@ const getMedian = (arr) => {
     return arr[result]
 }
 
-const createHashTable = arrayToMap => {
+export default createHashTable = arrayToMap => {
 
     const hashObj = {}
     arrayToMap.map( word => {
