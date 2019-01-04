@@ -6,9 +6,6 @@ const mergeSort = arr => {
 	let secondHalf = getSecondHalf(arr)
 
 	return merge(mergeSort(firstHalf), mergeSort(secondHalf))
-
-
-
 }
 
 const getSecondHalf = arr => arr.slice(getMiddleIndex(arr))
